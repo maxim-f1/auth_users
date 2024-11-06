@@ -3,12 +3,12 @@ from sqlalchemy import URL
 
 
 class PostgresConfig(BaseSettings):
-    user: str
-    host: str
-    port: int
-    db: str
-    driver: str
-    password: str
+    user: str = 'postgres'
+    host: str = 'postgres'
+    port: int = 5432
+    db: str = 'postgres'
+    driver: str = 'postgresql+asyncpg'
+    password: str = 'postgres'
     ddl_show: bool = False
 
     def connection_url(self) -> URL:

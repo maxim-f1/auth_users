@@ -4,13 +4,13 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class RedisConfig(BaseSettings):
     model_config = SettingsConfigDict(env_prefix='redis_')
 
-    host: str
-    port: int
-    driver: str
+    host: str = 'redis'
+    port: int = 6179
+    driver: str = 'redis'
     user: str = 'default'
-    password: str
-    api_index: int
-    bot_index: int
+    password: str = 'password'
+    api_index: int = 1
+    bot_index: int = 2
     encoding: str = 'utf8'
     decode_responses: bool = True
 

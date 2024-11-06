@@ -6,8 +6,8 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class AuthConfig(BaseSettings):
     model_config = SettingsConfigDict(env_prefix='auth_')
 
-    secret: str
-    algorithm: str
+    secret: str = 'secret'
+    algorithm: str = 'HS256'
 
     session_ttl_sec: int = 60 * 15
 
